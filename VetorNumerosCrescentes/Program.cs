@@ -1,7 +1,8 @@
-﻿int size = 10;
+﻿int size =100;
 int aux = 0;
 int[] vetorOriginal = new int[size];
 int[] vetorOrdenado = new int[size];
+int[] vetorContrario = new int[size];
 
 for (int i = 0; i < size; i++)
 {
@@ -9,9 +10,10 @@ for (int i = 0; i < size; i++)
     vetorOrdenado[i] = vetorOriginal[i]; // Copia para o vetorOrdenado
 }
 
-for(int i = 0; i < size; i++)
+Console.WriteLine("Números originais: ");
+for (int i = 0; i < size; i++)
 {
-    Console.WriteLine(vetorOriginal[i] + " ");
+    Console.Write(vetorOriginal[i] + " ");
 }
 
 Console.ReadKey();
@@ -30,153 +32,34 @@ for (int referencia = 0; referencia < size; referencia++)
     }
 }
 
-
-for (int i = 0; i < size; i++)
+Console.WriteLine("\n\nNúmeros ordenados: ");
+Console.Write(vetorOrdenado[0] + " ");
+for (int i = 1; i < size; i++)
 {
-    Console.WriteLine(vetorOrdenado[i] + " ");
+    if (vetorOrdenado[i] != vetorOrdenado[i - 1])
+    {
+        Console.Write(vetorOrdenado[i] + " ");
+    }
 }
-
-
 Console.ReadKey();
 
 
 
+for (int i = 0; i < size; i++)
+{
+    vetorContrario[i] = vetorOrdenado[i];
+}
+
+
+Console.WriteLine("\n\nNúmeros ao contrario: ");
+Console.Write(vetorContrario[size - 1] + " ");
+for (int i = size - 2; i >= 0; i--)
+{
+    if (vetorContrario[i] != vetorContrario[i + 1])
+    {
+        Console.Write(vetorContrario[i] + " ");
+    }
+}
+Console.ReadKey();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//int[] vetor = new int[5];
-//int[] vetor2 = new int[5];
-
-//for(int i = 0; i < 5; i++)
-//{
-//    //Console.Write($"Digite o {i + 1}º número: ");
-//    //vetor[i] = int.Parse(Console.ReadLine());
-//    vetor[i] = new Random().Next(0, 100);    
-//}
-
-
-
-//for (int i = 0; i < 5; i++)
-//{
-//    int menor = vetor[i]; //Guardando o número do vetor na variavel menor.
-//    int posMenor = i; // Guardando a posição do número.
-
-//    for (int j = i + 1; j < 5; j++) //Usando novo incremento para comparar
-//    {                               // Posição |j| vai comparar com a próxima posição a ela |i+1| ou seja compara o (0) do |j| com o (1) do |i|
-
-//        if (vetor[j] < menor) //Se o valor de |j| for < que o valor guardado em |menor|
-//        { 
-//            menor = vetor[j]; //Menor guarda esse valor do vetor.
-//            posMenor = j; //Guarda  a posição do |j|
-//        }
-//    }
-
-//    vetor2[i] = vetor[i];
-//    vetor[i] = menor;
-//    vetor[posMenor] = vetor2[i];
-//}
-//Console.WriteLine("\nNúmeros ordenados: ");
-//for (int i = 0; i < 5; i++)
-//{
-//    Console.Write($"{vetor[i]} ");
-
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//int[] numeros = new int[5];
-//int menor;
-
-//for (int i = 0; i < 5; i++)
-//{ 
-//    numeros[i] = new Random().Next(0, 100);
-//    Console.WriteLine("Números escolhidos: {0}", numeros[i]);
-//}
-
-//// Ordenando os números em ordem crescente
-//for (int i = 0; i < 5 - 1; i++)
-//{
-//    for (int j = 0; j < 5 - i - 1; j++)
-//    {
-//        if (numeros[j] > numeros[j + 1])
-//        {
-//            // Troca os elementos se estiverem fora de ordem
-//            menor = numeros[j];
-//            numeros[j] = numeros[j + 1];
-//            numeros[j + 1] = menor;
-//        }
-//    }
-//}
-
-//// Exibindo os números em ordem crescente
-//Console.WriteLine("\nNúmeros em ordem crescente:");
-//for (int i = 0; i < 5; i++)
-//{
-//    Console.Write(numeros[i] + " ");
-//}
-
-//Console.ReadKey();
